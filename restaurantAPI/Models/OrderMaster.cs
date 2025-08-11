@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+
+namespace restaurantAPI.Models
+{
+    public class OrderMaster
+    {
+         [Key]
+        public int OrderMasterId { get; set; }
+
+        [Column(TypeName="nvarchar(100)")]
+        public string OrderNumber { get; set; }
+
+        public int CustomerId { get; set; }
+
+        public Customer Customer { get; set; }
+
+ [      Column(TypeName="nvarchar(10)")]
+        public string PMethod { get; set; }
+
+        public decimal GTotal { get; set; }
+    }
+}
